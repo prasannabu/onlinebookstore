@@ -1,20 +1,17 @@
 pipeline {
     agent any
 
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "mvn"
+    }
+
     stages {
-        stage ('Compile Stage') {
-
+        stage('Build') {
             steps {
-                withMaven(maven : 'maven_3_5_4') {
-                    sh 'mvn clean compile'
-                }
-            }
+             
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
         }
-         stage("Test"){
-            steps{
-                echo "Testing going"
-            }
-         }
-
-     }
-}`
+    }
+}
