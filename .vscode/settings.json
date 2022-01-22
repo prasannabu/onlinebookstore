@@ -1,0 +1,5 @@
+{
+    "jenkins.pipeline.linter.connector.url": "http://13.235.71.5:8080/pipeline-model-converter/validate",
+    "jenkins.pipeline.linter.connector.user": "nitin",
+    "jenkins.pipeline.linter.connector.pass": "nitin"
+}
