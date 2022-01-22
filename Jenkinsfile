@@ -17,7 +17,7 @@ pipeline {
     stage('Test')
     {
         steps{
-            echo "Testing start application"
+            echo "Testing start"
         }
     }
 }
