@@ -25,5 +25,10 @@ pipeline {
             mail bcc: '', body: 'sample email for testing', cc: '', from: '', replyTo: '', subject: 'job status', to: 'coolgirl.buddha@gmail.com'
         }
     }
+    stage('git checkout'){
+        steps{
+            git 'https://github.com/prasannabu/docker-java.git'
+        }
+    }
 }
 }
