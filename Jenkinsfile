@@ -30,5 +30,10 @@ pipeline {
             git 'https://github.com/prasannabu/docker-java.git'
         }
     }
+    stage('email notification'){
+        steps{
+            mail bcc: '', body: '"Status of  \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'"', cc: '', from: '', replyTo: '', subject: '"Jobs status \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'"', to: 'coolgirl.buddha@gmail.com'
+        }
+    }
 }
 }
