@@ -20,5 +20,10 @@ pipeline {
             echo "Testing start App testing"
         }
     }
+    stage('email notification'){
+        steps{
+            mail bcc: '', body: 'sample email for testing', cc: '', from: '', replyTo: '', subject: 'job status', to: 'coolgirl.buddha@gmail.com'
+        }
+    }
 }
 }
