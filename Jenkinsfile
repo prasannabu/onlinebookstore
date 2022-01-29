@@ -22,7 +22,7 @@ pipeline {
     }
     stage('email notification'){
         steps{
-            mail bcc: '', body: 'sample email for testing', cc: '', from: '', replyTo: '', subject: 'job status', to: 'coolgirl.buddha@gmail.com'
+            mail bcc: '', body: 'sample pipeline', cc: '', from: '', replyTo: '', subject: '', to: 'coolgirl.buddha@gmail.com'
         }
     }
     stage('git checkout'){
@@ -33,6 +33,11 @@ pipeline {
     stage('email job notification'){
         steps{
            mail bcc: '', body: '"Status of  \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'"', cc: '', from: '', replyTo: '', subject: '"Jobs status \'${env.JOB_NAME} [${env.BUILD_NUMBER}]\'"', to: 'coolgirl.buddha@gmail.com' 
+        }
+    }
+    stage('git pull'){
+        steps{
+            git 'https://github.com/prasannabu/docker-java.git'
         }
     }
 }
